@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+        .div1 {
+            width: 900px;
+            height: 500px;
+/*            padding: 90px;*/
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<br />
+<h1>NCB Commercial Batch Request Export to NCB</h1><br />
+<!-- Example single danger button -->
+
+<form>
+    </br>
+
+    <div class="dropdown show" >
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Selete
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Uploadreview">Export no score (ไม่ประสงค์ Score)</a>
+            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Downloadreport">Export with Socre (ประสงค์ Score)</a>
+        </div>
+
+            <div class="dropdown show" style="float:right;">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menu
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Uploadreview">Upload review</a>
+                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Downloadreport">Download report</a>
+                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="ExporttoNCB">Export to NCB</a>
+                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Importncb">Import from NCB</a>
+                </div>
+            </div>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+        <p><a href="#"<i class="fa fa-download"></i> TCRBANK-WS-COMMERCIAL=REVIEW-20220921.zip</a></p>
+        <br />
+        <label for="email">TO:</label>
+        <input type="email" id="email" name="email">
+        <br />
+        <br />
+        <label for="subject">Subject: ขอสืบค้นข้อมูลเพื่อการทบทวนสินเชื่อ (ประสงค์ Score)</label>
+        <br />
+        <br />
+        <label for="boy">Body:</label>
+</form>
+<br />
+<textarea id="w3review" name="w3review" rows="16" cols="160"> 
+    Request Details From Customer
+
+    - Location วางที่ File : FTP ของ Batch Offline ที่ TCRBANK_BATCH/Batch_in
+    - จำนวนทั้งหมด 6,700 รายการ
+    - File name : TCRBANK-WS-COMMERCIAL=REVIEW-20220921.zip
+    - ข้อมูลรายละเอียดใน file มีจำนวน 2 file ดังนี้
+
+    1.TCRBANK-REVIEW-20220921-1.txt ขนาด file 686kb จำนวน 5,000 รายการ Modified date : 2022/09/21 14:02
+    2.TCRBANK-REVIEW-20220921-2.txt ขนาด file 248kb จำนวน 1,700 รายการ Modified date : 2022/09/21 14:03
+
+    หากมีข้อสงสัยประการใต กรุณาติดต่อ คุณทิพนิภา โชคดีอนันต์ Tel 02 697 5300 ต่อ 1202
+
+</textarea>
+  <br>
+  <br />
+    <button type="submit" class="pull-right btn btn-primary" title="ระบบจะส่งอีเมลตามข้อความทั้ง Subject และ Body  และระบบบจะส่งไฟล์ ZIP (TCRBANK-COMMERCIAL-REVIEW-20220921.ZIP). ไปยังอีเมลผู้รับด้วย " >Submit Email</button>
+
+
+</body>
+</html>

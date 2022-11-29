@@ -1,0 +1,178 @@
+﻿<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<br />
+<h1>NCB Commercial Batch Request Import from NCB</h1></br>
+<!-- Example single danger button -->
+
+<form>
+    </br>
+    <div class="dropdown show" style="float:right;">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menu
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Uploadreview">Upload review</a>
+            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Downloadreport">Download report</a>
+            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="ExporttoNCB">Export to NCB</a>
+            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Importncb">Import from NCB</a>
+        </div>
+    </div>
+
+</form>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button {
+            background-color: #FFA500; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+
+
+        .button1 {
+            border-radius: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mb-9 form-check">
+        <br />
+        <br />
+        <br />
+
+        <td>
+
+            <label for="formFileLg" class="form-label" title="Select multple files." >Please selete review list files.(*.csv) </label>
+            <form>
+
+                <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input class="inner form-control form-control-lg" id="formFileLg" type="file" style="width:900px;" />
+                    </div>
+                    <div class="btn-group" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Import File
+                        </button>
+                     
+
+                    </div>
+
+                </div>
+                <br />
+
+                <!-- Progress Bar -->
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        <span class="sr-only">60% Complete</span>
+                    </div>
+                </div>
+
+                @*<div class="mb-2 form-check progress">
+                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>*@
+
+                @* <button type="submit" class="pull-right btn btn-success" onclick="myFunction()">UploadFile</button>*@
+                @*<script>
+                function myFunction() {
+                confirm("Upload message\n \nFile name :\nRowcount :\nParse template :\n");
+                confirm("Upload message\n \nFile name :\nRowcount :\nParse template :\n");
+                confirm("Upload message\n \nFile name :\nRowcount :\nParse template :\n");
+                }
+                </script>*@
+
+            </form>
+
+
+        </td>
+
+
+</body>
+</html>
+
+<!-- Button trigger modal -->
+@*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>*@
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Upload message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                File name :
+                <br />
+                <br />  <p> commercial-batch-score-1.csv </p>
+                <p> commercial-batch-score-2.csv </p>
+                <br />
+                Total row count : 6,700 / 6,700
+                <br />
+                <br />
+
+                Status : <font color="#ffd700">Success</font>
+                <br />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1"> Button 1 </button>
+
+
+
+    <!-- Modal  Popup 1 -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Import message</h4>
+                </div>
+                <div class="modal-body">
+                    File name :
+                    <br />
+                    <br />  <p> commercial-batch-score-1.csv </p>
+                     <p> commercial-batch-score-2.csv </p>
+                    <br />
+                    Total row count : 6,699 / 6,700
+                    <br />
+                    <br />
+
+                    Status : <font color="	#ff0000">FAIL</font>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

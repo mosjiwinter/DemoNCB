@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<html>
+<body>
+    <br />
+   <font size="9">
+       <center>NCB Commercial Batch Request</center>
+   </font><br />
+
+
+
+
+   <br />
+    <form>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="username" class="form-control" aria-describedby="usernamelHelp" style="width:300px;">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" style="width:300px;">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember</label>
+        </div>
+
+        <div class="mb-3 form-check">
+        <button class="form-control btn-primary" style="width:200px;"  asp-area="" asp-controller="Home" asp-action="Homemenu">Login</button>
+        </div>
+
+     
+    </form>
+
+</body>
+</html>
+
+
